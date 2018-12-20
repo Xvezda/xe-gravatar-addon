@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon version="0.2">
+    <title xml:lang="ko">Gravatar 애드온</title>
+    <description xml:lang="ko">
+        기본 프로필 이미지로 Gravatar을 사용하도록 설정하는 애드온입니다.
+    </description>
+    <version>1.0</version>
+    <date>2018-12-20</date>
+
+    <author email_address="xvezda@naver.com" link="https://xvezda.com">
+        <name xml:lang="ko">즈베즈다</name>
+        <name xml:lang="en">Xvezda</name>
+    </author>
+
+    <extra_vars>
+        <var name="image_theme" type="select">
+            <title xml:lang="ko">Gravatar 테마</title>
+            <description xml:lang="ko">Gravatar의 프로필 이미지 테마를 설정하는 옵션입니다.
+                자세한 내용은 https://ko.gravatar.com/site/implement/images/#default-image 를 참고하세요.</description>
+            <options value="">
+                <title xml:lang="ko">기본형</title>
+            </options>
+            <options value="404">
+                <title xml:lang="ko">404</title>
+            </options>
+            <options value="mp">
+                <title xml:lang="ko">mp</title>
+            </options>
+            <options value="identicon">
+                <title xml:lang="ko">identicon</title>
+            </options>
+            <options value="monsterid">
+                <title xml:lang="ko">monsterid</title>
+            </options>
+            <options value="wavatar">
+                <title xml:lang="ko">wavatar</title>
+            </options>
+            <options value="retro">
+                <title xml:lang="ko">retro</title>
+            </options>
+            <options value="robohash">
+                <title xml:lang="ko">robohash</title>
+            </options>
+            <options value="blank">
+                <title xml:lang="ko">blank</title>
+            </options>
+        </var>
+        <var name="image_rating" type="select">
+            <title xml:lang="ko">이미지 등급 설정</title>
+            <description xml:lang="ko">Gravatar의 등급에 따라 어느 수준까지 허용할 것 인지 결정합니다.
+            자세한 내용은 https://ko.gravatar.com/site/implement/images/#rating 을 참고해주세요.</description>
+            <options value="">
+                <title xml:lang="ko">기본 등급</title>
+            </options>
+            <options value="pg">
+                <title xml:lang="ko">pg</title>
+            </options>
+            <options value="r">
+                <title xml:lang="ko">r</title>
+            </options>
+            <options value="x">
+                <title xml:lang="ko">x</title>
+            </options>
+        </var>
+        <var name="force_default" type="select">
+            <title xml:lang="ko">항상 기본 이미지 사용</title>
+            <description xml:lang="ko">모종의 이유로 이용자의 Gravatar설정과 관계없이
+                항상 기본 이미지를 보이게 하고 싶다면 이 옵션을 활성화 해주세요.</description>
+            <options value="">
+                <title xml:lang="ko">비활성화 (기본)</title>
+            </options>
+            <options value="Y">
+                <title xml:lang="ko">강제</title>
+            </options>
+        </var>
+    </extra_vars>
+</addon>
