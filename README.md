@@ -1,4 +1,4 @@
-XE gravatar addon
+XE Gravatar addon
 =================
 
 This is third-party plugin, NOT official plugin supported by Gravatar. Rights of Gravatar belongs to [gravatar.com](https://gravatar.com).

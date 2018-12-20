@@ -4,7 +4,7 @@
     <description xml:lang="ko">
         기본 프로필 이미지로 Gravatar을 사용하도록 설정하는 애드온입니다.
     </description>
-    <version>1.0</version>
+    <version>0.1b</version>
     <date>2018-12-20</date>
 
     <author email_address="xvezda@naver.com" link="https://xvezda.com">
@@ -13,6 +13,22 @@
     </author>
 
     <extra_vars>
+        <var name="image_priority" type="select">
+            <title xml:lang="ko">이미지 우선순위</title>
+            <description xml:lang="ko">Gravatar와 XE 기본 프로필 이미지 둘 다 설정이 되어있는 경우,
+                두 가지 중 어떤 것에 우선순위를 높게 줄 것인지 설정합니다.</description>
+            <options value="">
+                <title xml:lang="ko">XE 기본 프로필 우선 (기본)</title>
+            </options>
+            <options value="gravatar">
+                <title xml:lang="ko">Gravatar 우선</title>
+            </options>
+        </var>
+        <var name="force_size" type="text">
+            <title xml:lang="ko">사이즈 강제 설정</title>
+            <description xml:lang="ko">Gravatar의 사이즈를 강제로 지정합니다.
+                빈 칸으로 두실 경우 기본값(80px 혹은 멤버 모듈 설정 값)이 적용됩니다.</description>
+        </var>
         <var name="image_theme" type="select">
             <title xml:lang="ko">Gravatar 테마</title>
             <description xml:lang="ko">Gravatar의 프로필 이미지 테마를 설정하는 옵션입니다.

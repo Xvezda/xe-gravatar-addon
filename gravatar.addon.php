@@ -1,5 +1,5 @@
 <?php
-/* @Copyright (c) 2018 Xvezda <https://xvezda.com> */
+/* Copyright (c) 2018 Xvezda <https://xvezda.com> */
 
 if (!defined('__XE__')) exit();
 
@@ -7,33 +7,32 @@ if (!defined('__XE__')) exit();
 require_once(_XE_PATH_ . 'addons/gravatar/gravatar.func.php');
 
 if ($called_position == 'after_module_proc') {
-    /*
     $oMemberModel = getModel('member');
-    $config = $oMemberModel->getMemberConfig();
+    $vars = getGravatarAddonVariables();
 
-    if ($config->profile_image != 'Y') return;
-     */
+    // If user login
+    $logged_info = Context::get('logged_info');
+    if ($logged_info) {
+        if (!$logged_info->profile_image || $vars->image_priority) {
+            $logged_info->profile_image = getGravatarImageByMemberSrl($logged_info->member_srl);
+        }
+    }
 
     switch ($this->act) {
     case 'dispBoardContent':
+        if ($this->module_info->use_anonymous === 'Y' && !$vars->anon_active) return;
         $oDocument = Context::get('oDocument');
-        setProfileImageByMemberSrl($oDocument->getMemberSrl());
+        setGravatarImageByMemberSrl($oDocument->getMemberSrl());
 
         $oComments = $oDocument->getComments();
         foreach ($oComments as $comment) {
-            setProfileImageByMemberSrl($comment->member_srl);
+            setGravatarImageByMemberSrl($comment->member_srl);
         }
     default:
       break;
     }
-    //$GLOBALS['__member_info__']['profile_image'][0] = $info;
-
-    // if user login
-    $logged_info = Context::get('logged_info');
-    if ($logged_info) {
-        $logged_info->profile_image = getProfileImageByMemberSrl($logged_info->member_srl);
-    }
 }
+
 
 /* End of file gravatar.addon.php */
 /* Location: ./addons/gravatar/gravatar.addon.php */
